@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <HeaderCompnent />
+        <HeaderComponent />
 
         <section class="hero-section">
             <carousel :items-to-show="1" :autoplay="3000" :wrap-around="true">
@@ -70,23 +70,27 @@
                 </div>
             </div>
         </section>
+
+        <InstaComponent />
     </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HeaderCompnent from '@/components/HeaderComponent.vue'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import InstaComponent from '@/components/InstaComponent.vue'
 
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 export default {
     components: {
-        HeaderCompnent,
+        HeaderComponent,
         Carousel,
         Slide,
         Pagination,
         Navigation,
+        InstaComponent,
     },
     data: () => ({
         // carousel settings

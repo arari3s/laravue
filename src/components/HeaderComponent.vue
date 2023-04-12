@@ -92,8 +92,5 @@
 
 export default {
     name: 'HeaderComponent',
-    // components: {
-    //     HelloWorld
-    // }
 }
 </script>
