@@ -4,6 +4,7 @@
         <HeroComponent />
         <ProductComponent />
         <InstaComponent />
+        <PartnerComponent />
     </div>
 </template>
 
@@ -13,6 +14,7 @@ import HeaderComponent from '@/components/HeaderComponent.vue'
 import HeroComponent from '@/components/HeroComponent.vue'
 import ProductComponent from '@/components/ProductComponent.vue'
 import InstaComponent from '@/components/InstaComponent.vue'
+import PartnerComponent from '@/components/PartnerComponent.vue'
 
 export default {
     components: {
@@ -20,6 +22,7 @@ export default {
         HeroComponent,
         ProductComponent,
         InstaComponent,
+        PartnerComponent,
     },
 }
 </script>
