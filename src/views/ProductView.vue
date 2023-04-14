@@ -21,29 +21,26 @@
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="product-pic-zoom">
-                                    <img class="product-big-img" src="img/mickey1.jpg" alt="" />
-                                </div>
 
-                                <div class="product-thumbs">
-                                    <div class="product-thumbs-track ps-slider owl-carousel">
-                                        <div class="pt active" data-imgbigurl="img/mickey1.jpg">
-                                            <img src="img/mickey1.jpg" alt="" />
+                                <Carousel id="gallery" :items-to-show="1" :wrap-around="false" v-model="currentSlide"
+                                    class="m-1">
+                                    <Slide v-for="slide in 3" :key="slide">
+                                        <div class="carousel__item">
+                                            <img class="product-big-img" src="img/mickey1.jpg" alt="" />
                                         </div>
+                                    </Slide>
+                                </Carousel>
 
-                                        <div class="pt" data-imgbigurl="img/mickey2.jpg">
-                                            <img src="img/mickey2.jpg" alt="" />
+                                <Carousel id="thumbnails" :items-to-show="3" :wrap-around="false" v-model="currentSlide"
+                                    ref="carousel">
+                                    <Slide v-for="slide in 3" :key="slide">
+                                        <div class="carousel__item" @click="slideTo(slide - 1)">
+                                            <div class="pt active m-1" data-imgbigurl="img/mickey1.jpg">
+                                                <img src="img/mickey1.jpg" alt="" />
+                                            </div>
                                         </div>
-
-                                        <div class="pt" data-imgbigurl="img/mickey3.jpg">
-                                            <img src="img/mickey3.jpg" alt="" />
-                                        </div>
-
-                                        <div class="pt" data-imgbigurl="img/mickey4.jpg">
-                                            <img src="img/mickey4.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
+                                    </Slide>
+                                </Carousel>
                             </div>
 
                             <div class="col-lg-6">
@@ -196,7 +193,9 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide } from 'vue3-carousel'
+
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 
@@ -204,6 +203,16 @@ export default {
     components: {
         HeaderComponent,
         FooterComponent,
+        Carousel,
+        Slide,
+    },
+    data: () => ({
+        currentSlide: 0,
+    }),
+    methods: {
+        slideTo(val) {
+            this.currentSlide = val
+        },
     },
 }
 </script>
